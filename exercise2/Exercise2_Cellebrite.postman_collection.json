@@ -1,0 +1,1015 @@
+{
+	"info": {
+		"_postman_id": "be1c596f-d817-4d44-b605-940ddfcaf2d3",
+		"name": "Exercise2_Cellebrite",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "GET /users",
+			"item": [
+				{
+					"name": "get all the users - positive path",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Verify get /users with valid headers\", function(){\r",
+									"    pm.response.to.have.status(200);\r",
+									"    var jsonResponse = pm.response.json();\r",
+									"    pm.expect(jsonResponse.users).exist;\r",
+									"})"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "x-authentication-token",
+								"value": "very-secrete-token",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "https://pacific-taiga-76065.herokuapp.com/users",
+							"protocol": "https",
+							"host": [
+								"pacific-taiga-76065",
+								"herokuapp",
+								"com"
+							],
+							"path": [
+								"users"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get all the users - without headers",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Verify get /users without headers\", function(){\r",
+									"    pm.response.to.have.status(403);\r",
+									"})"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "x-authentication-token",
+								"value": "secrete-token",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"url": {
+							"raw": "https://pacific-taiga-76065.herokuapp.com/users",
+							"protocol": "https",
+							"host": [
+								"pacific-taiga-76065",
+								"herokuapp",
+								"com"
+							],
+							"path": [
+								"users"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get all the users - wrong headers",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Verify get /users with wrong headers\", function(){\r",
+									"    pm.response.to.have.status(403);\r",
+									"})"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "x-authentication-token",
+								"value": "secrete-token",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "https://pacific-taiga-76065.herokuapp.com/users",
+							"protocol": "https",
+							"host": [
+								"pacific-taiga-76065",
+								"herokuapp",
+								"com"
+							],
+							"path": [
+								"users"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get all the users - null headers",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Verify get /users with null headers\", function(){\r",
+									"    pm.response.to.have.status(403);\r",
+									"})"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "x-authentication-token",
+								"value": "",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "https://pacific-taiga-76065.herokuapp.com/users",
+							"protocol": "https",
+							"host": [
+								"pacific-taiga-76065",
+								"herokuapp",
+								"com"
+							],
+							"path": [
+								"users"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "GET /messages",
+			"item": [
+				{
+					"name": "get all the messages - positive path",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Verify get /messages with valid headers\", function(){\r",
+									"    pm.response.to.have.status(200);\r",
+									"    var jsonResponse = pm.response.json();\r",
+									"    pm.expect(jsonResponse.messages).exist;\r",
+									"})"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "x-authentication-token",
+								"value": "very-secrete-token",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "https://pacific-taiga-76065.herokuapp.com/messages",
+							"protocol": "https",
+							"host": [
+								"pacific-taiga-76065",
+								"herokuapp",
+								"com"
+							],
+							"path": [
+								"messages"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get all the messages - without headers",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Verify get /messages without headers\", function(){\r",
+									"    pm.response.to.have.status(403);\r",
+									"})"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "x-authentication-token",
+								"value": "very-secrete-token",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"url": {
+							"raw": "https://pacific-taiga-76065.herokuapp.com/messages",
+							"protocol": "https",
+							"host": [
+								"pacific-taiga-76065",
+								"herokuapp",
+								"com"
+							],
+							"path": [
+								"messages"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get all the messages - wrong headers",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Verify get /messages with wrong headers\", function(){\r",
+									"    pm.response.to.have.status(403);\r",
+									"})"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "x-authentication-token",
+								"value": "very-token",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "https://pacific-taiga-76065.herokuapp.com/messages",
+							"protocol": "https",
+							"host": [
+								"pacific-taiga-76065",
+								"herokuapp",
+								"com"
+							],
+							"path": [
+								"messages"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get all the messages - null headers",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Verify get /messages with null headers\", function(){\r",
+									"    pm.response.to.have.status(403);\r",
+									"})"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "x-authentication-token",
+								"value": "",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "https://pacific-taiga-76065.herokuapp.com/messages",
+							"protocol": "https",
+							"host": [
+								"pacific-taiga-76065",
+								"herokuapp",
+								"com"
+							],
+							"path": [
+								"messages"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "POST /messages/:userId/:message",
+			"item": [
+				{
+					"name": "post a message - valid headers and valid params",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Verify post /messages/:userId/:message with valid headers and valid params\", function(){\r",
+									"    pm.response.to.have.status(201);\r",
+									"})"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "x-authentication-token",
+								"value": "very-secrete-token",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "https://pacific-taiga-76065.herokuapp.com/messages/:userId/:message",
+							"protocol": "https",
+							"host": [
+								"pacific-taiga-76065",
+								"herokuapp",
+								"com"
+							],
+							"path": [
+								"messages",
+								":userId",
+								":message"
+							],
+							"variable": [
+								{
+									"key": "userId",
+									"value": "43d12e74-c1cc-5de4-bd3a-f1871e2bef46"
+								},
+								{
+									"key": "message",
+									"value": "abc"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "post a message - valid headers and valid params - non-existent userId",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Verify post /messages/:userId/:message with valid headers and valid params - non-existent userId\", function(){\r",
+									"    pm.response.to.have.status(404);\r",
+									"})"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "x-authentication-token",
+								"value": "very-secrete-token",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "https://pacific-taiga-76065.herokuapp.com/messages/:userId/:message",
+							"protocol": "https",
+							"host": [
+								"pacific-taiga-76065",
+								"herokuapp",
+								"com"
+							],
+							"path": [
+								"messages",
+								":userId",
+								":message"
+							],
+							"variable": [
+								{
+									"key": "userId",
+									"value": "userId123"
+								},
+								{
+									"key": "message",
+									"value": "abc-test"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "post a message - valid headers and valid params - 5000 chars for message",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Verify post /messages/:userId/:message with valid headers and valid params - 5000 chars for message param\", function(){\r",
+									"    pm.response.to.have.status(201);\r",
+									"})"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "x-authentication-token",
+								"value": "very-secrete-token",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "https://pacific-taiga-76065.herokuapp.com/messages/:userId/:message",
+							"protocol": "https",
+							"host": [
+								"pacific-taiga-76065",
+								"herokuapp",
+								"com"
+							],
+							"path": [
+								"messages",
+								":userId",
+								":message"
+							],
+							"variable": [
+								{
+									"key": "userId",
+									"value": "25c63219-c5d2-5c40-ac2d-9faa59728f2f"
+								},
+								{
+									"key": "message",
+									"value": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium. Integer tincidunt. Cras dapibus. Vivamus elementum semper nisi. Aenean vulputate eleifend tellus. Aenean leo ligula, porttitor eu, consequat vitae, eleifend ac, enim. Aliquam lorem ante, dapibus in, viverra quis, feugiat a, tellus. Phasellus viverra nulla ut metus varius laoreet. Quisque rutrum. Aenean imperdiet. Etiam ultricies nisi vel augue. Curabitur ullamcorper ultricies nisi. Nam eget dui. Etiam rhoncus. Maecenas tempus, tellus eget condimentum rhoncus, sem quam semper libero, sit amet adipiscing sem neque sed ipsum. Nam quam nunc, blandit vel, luctus pulvinar, hendrerit id, lorem. Maecenas nec odio et ante tincidunt tempus. Donec vitae sapien ut libero venenatis faucibus. Nullam quis ante. Etiam sit amet orci eget eros faucibus tincidunt. Duis leo. Sed fringilla mauris sit amet nibh. Donec sodales sagittis magna. Sed consequat, leo eget bibendum sodales, augue velit cursus nunc, quis gravida magna mi a libero. Fusce vulputate eleifend sapien. Vestibulum purus quam, scelerisque ut, mollis sed, nonummy id, metus. Nullam accumsan lorem in dui. Cras ultricies mi eu turpis hendrerit fringilla. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; In ac dui quis mi consectetuer lacinia. Nam pretium turpis et arcu. Duis arcu tortor, suscipit eget, imperdiet nec, imperdiet iaculis, ipsum. Sed aliquam ultrices mauris. Integer ante arcu, accumsan a, consectetuer eget, posuere ut, mauris. Praesent adipiscing. Phasellus ullamcorper ipsum rutrum nunc. Nunc nonummy metus. Vestibulum volutpat pretium libero. Cras id dui. Aenean ut eros et nisl sagittis vestibulum. Nullam nulla eros, ultricies sit amet, nonummy id, imperdiet feugiat, pede. Sed lectus. Donec mollis hendrerit risus. Phasellus nec sem in justo pellentesque facilisis. Etiam imperdiet imperdiet orci. Nunc nec neque. Phasellus leo dolor, tempus non, auctor et, hendrerit quis, nisi. Curabitur ligula sapien, tincidunt non, euismod vitae, posuere imperdiet, leo. Maecenas malesuada. Praesent congue erat at massa. Sed cursus turpis vitae tortor. Donec posuere vulputate arcu. Phasellus accumsan cursus velit. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Sed aliquam, nisi quis porttitor congue, elit erat euismod orci, ac placerat dolor lectus quis orci. Phasellus consectetuer vestibulum elit. Aenean tellus metus, bibendum sed, posuere ac, mattis non, nunc. Vestibulum fringilla pede sit amet augue. In turpis. Pellentesque posuere. Praesent turpis. Aenean posuere, tortor sed cursus feugiat, nunc augue blandit nunc, eu sollicitudin urna dolor sagittis lacus. Donec elit libero, sodales nec, volutpat a, suscipit non, turpis. Nullam sagittis. Suspendisse pulvinar, augue ac venenatis condimentum, sem libero volutpat nibh, nec pellentesque velit pede quis nunc. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Fusce id purus. Ut varius tincidunt libero. Phasellus dolor. Maecenas vestibulum mollis diam. Pellentesque ut neque. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. In dui magna, posuere eget, vestibulum et, tempor auctor, justo. In ac felis quis tortor malesuada pretium. Pellentesque auctor neque nec urna. Proin sapien ipsum, porta a, auctor quis, euismod ut, mi. Aenean viverra rhoncus pede. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Ut non enim eleifend felis pretium feugiat. Vivamus quis mi. Phasellus a est. Phasellus magna. In hac habitasse platea dictumst. Curabitur at lacus ac velit ornare lobortis. Curabitur a felis in nunc fringilla tristique. Morbi mattis ullamcorper velit. Phasellus gravida semper nisi. Nullam vel sem. Pellentesque libero tortor, tincidunt et, tincidunt eget, semper nec, quam. Sed hendrerit. Morbi ac felis. Nunc egestas, augue at pellentesque laoreet, felis eros vehicula leo, at malesuada velit leo quis pede. Donec interdum, metus et hendrerit aliquet, dolor diam sagittis ligula, eget egestas libero turpis vel mi. Nunc nulla. Fusce risus nisl, viverra et, tempor et, pretium in, sapien. Donec venenatis vulputate lorem. Morbi nec metus. Phasellus blandit leo ut odio. Maecenas ullamcorper, dui et placerat feugiat, eros pede varius nisi, condimentum viverra felis nunc et lorem. Sed magna purus, fermentum eu, tincidunt eu, varius ut, felis. In auctor lobortis lacus. Quisque libero metus, condimentum nec, tempor a, commodo mollis, magna. Vestibulum ullamcorper mauris at ligul"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "post a message - valid headers and valid params - ASCII text for message",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Verify post /messages/:userId/:message with valid headers and valid params - 1000 ASCII chars for message param\", function(){\r",
+									"    pm.response.to.have.status(404);\r",
+									"})"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "x-authentication-token",
+								"value": "very-secrete-token",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "https://pacific-taiga-76065.herokuapp.com/messages/:userId/:message",
+							"protocol": "https",
+							"host": [
+								"pacific-taiga-76065",
+								"herokuapp",
+								"com"
+							],
+							"path": [
+								"messages",
+								":userId",
+								":message"
+							],
+							"variable": [
+								{
+									"key": "userId",
+									"value": "25c63219-c5d2-5c40-ac2d-9faa59728f2f"
+								},
+								{
+									"key": "message",
+									"value": "abc def ghi jkl mno pqrs tuv wxyz ABC DEF GHI JKL MNO PQRS TUV WXYZ !\"§ $%& /() =?* '<> #|; ²³~ @`´ ©«» ¤¼× {} abc def ghi jkl mno pqrs tuv wxyz ABC DEF GHI JKL MNO PQRS TUV WXYZ !\"§ $%& /() =?* '<> #|; ²³~ @`´ ©«» ¤¼× {} abc def ghi jkl mno pqrs tuv wxyz ABC DEF GHI JKL MNO PQRS TUV WXYZ !\"§ $%& /() =?* '<> #|; ²³~ @`´ ©«» ¤¼× {} abc def ghi jkl mno pqrs tuv wxyz ABC DEF GHI JKL MNO PQRS TUV WXYZ !\"§ $%& /() =?* '<> #|; ²³~ @`´ ©«» ¤¼× {} abc def ghi jkl mno pqrs tuv wxyz ABC DEF GHI JKL MNO PQRS TUV WXYZ !\"§ $%& /() =?* '<> #|; ²³~ @`´ ©«» ¤¼× {} abc def ghi jkl mno pqrs tuv wxyz ABC DEF GHI JKL MNO PQRS TUV WXYZ !\"§ $%& /() =?* '<> #|; ²³~ @`´ ©«» ¤¼× {} abc def ghi jkl mno pqrs tuv wxyz ABC DEF GHI JKL MNO PQRS TUV WXYZ !\"§ $%& /() =?* '<> #|; ²³~ @`´ ©«» ¤¼× {} abc def ghi jkl mno pqrs tuv wxyz ABC DEF GHI JKL MNO PQRS TUV WXYZ !\"§ $%& /() =?* '<> #|; ²³~ @`´ ©«» ¤¼× {} abc def ghi jkl mno pqrs tuv wxyz ABC DEF GHI JKL MNO PQRS TUV WXYZ !\"§ $%& /() =?* '<> #|; ²³~ @`´ ©«» ¤¼× {} a"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "post a message - valid headers and null message param",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Verify post /messages/:userId/:message with valid headers and null message param\", function(){\r",
+									"    pm.response.to.have.status(404);\r",
+									"})"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "x-authentication-token",
+								"value": "very-secrete-token",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "https://pacific-taiga-76065.herokuapp.com/messages/:userId/:message",
+							"protocol": "https",
+							"host": [
+								"pacific-taiga-76065",
+								"herokuapp",
+								"com"
+							],
+							"path": [
+								"messages",
+								":userId",
+								":message"
+							],
+							"variable": [
+								{
+									"key": "userId",
+									"value": "25c63219-c5d2-5c40-ac2d-9faa59728f2f"
+								},
+								{
+									"key": "message",
+									"value": ""
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "post a message - valid headers and null userId param",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Verify post /messages/:userId/:message with valid headers and null userId param\", function(){\r",
+									"    pm.response.to.have.status(404);\r",
+									"})"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "x-authentication-token",
+								"value": "very-secrete-token",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "https://pacific-taiga-76065.herokuapp.com/messages/:userId/:message",
+							"protocol": "https",
+							"host": [
+								"pacific-taiga-76065",
+								"herokuapp",
+								"com"
+							],
+							"path": [
+								"messages",
+								":userId",
+								":message"
+							],
+							"variable": [
+								{
+									"key": "userId",
+									"value": ""
+								},
+								{
+									"key": "message",
+									"value": "But I must explain to you how all this mistaken idea of denouncing pleasure and praising pain was born and I will give you a complete account of the system, and expound the actual teachings of the great explorer of the truth, the master-builder of human happiness. No one rejects, dislikes, or avoids pleasure itself, because it is pleasure, but because those who do not know how to pursue pleasure rationally encounter consequences that are extremely painful. Nor again is there anyone who loves or pursues or desires to obtain pain of itself, because it is pain, but because occasionally circumstances occur in which toil and pain can procure him some great pleasure. To take a trivial example, which of us ever undertakes laborious physical exercise, except to obtain some advantage from it? But who has any right to find fault with a man who chooses to enjoy a pleasure that has no annoying consequences, or one who avoids a pain that produces no resultant pleasure? On the other hand, we denounce with righteous indignation and dislike men who are so beguiled and demoralized by the charms of pleasure of the moment, so blinded by desire, that they cannot foresee the pain and trouble that are bound to ensue; and equal blame belongs to those who fail in their duty through weakness of will, which is the same as saying through shrinking from toil and pain. These cases are perfectly simple and easy to distinguish. In a free hour, when our power of choice is untrammelled and when nothing prevents our being able to do what we like best, every pleasure is to be welcomed and every pain avoided. But in certain circumstances and owing to the claims of duty or the obligations of business it will frequently occur that pleasures have to be repudiated and annoyances accepted. The wise man therefore always holds in these matters to this principle of selection: he rejects pleasures to secure other greater pleasures, or else he endures pains to avoid worse pains. But I must explain to you how all this mistaken idea of denouncing pleasure and praising pain was born and I will give you a complete account of the system, and expound the actual teachings of the great explorer of the truth, the master-builder of human happiness. No one rejects, dislikes, or avoids pleasure itself, because it is pleasure, but because those who do not know how to pursue pleasure rationally encounter consequences that are extremely painful. Nor again is there anyone who loves or pursues or desires to obtain pai"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "post a message - valid headers and null params",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Verify post /messages/:userId/:message with valid headers and null params\", function(){\r",
+									"    pm.response.to.have.status(404);\r",
+									"})"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "x-authentication-token",
+								"value": "very-secrete-token",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "https://pacific-taiga-76065.herokuapp.com/messages/:userId/:message",
+							"protocol": "https",
+							"host": [
+								"pacific-taiga-76065",
+								"herokuapp",
+								"com"
+							],
+							"path": [
+								"messages",
+								":userId",
+								":message"
+							],
+							"variable": [
+								{
+									"key": "userId",
+									"value": ""
+								},
+								{
+									"key": "message",
+									"value": ""
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "post a message - null headers and valid params",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Verify post /messages/:userId/:message with null headers and valid params\", function(){\r",
+									"    pm.response.to.have.status(403);\r",
+									"})"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "x-authentication-token",
+								"value": "",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "https://pacific-taiga-76065.herokuapp.com/messages/:userId/:message",
+							"protocol": "https",
+							"host": [
+								"pacific-taiga-76065",
+								"herokuapp",
+								"com"
+							],
+							"path": [
+								"messages",
+								":userId",
+								":message"
+							],
+							"variable": [
+								{
+									"key": "userId",
+									"value": "1acc3a45-dfb8-53e8-9005-e651b4112692"
+								},
+								{
+									"key": "message",
+									"value": "abcDEF123"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "post a message - wrong headers and valid params",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Verify post /messages/:userId/:message with wrong headers and valid params\", function(){\r",
+									"    pm.response.to.have.status(403);\r",
+									"})"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "x-authentication-token",
+								"value": "token-secrete",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "https://pacific-taiga-76065.herokuapp.com/messages/:userId/:message",
+							"protocol": "https",
+							"host": [
+								"pacific-taiga-76065",
+								"herokuapp",
+								"com"
+							],
+							"path": [
+								"messages",
+								":userId",
+								":message"
+							],
+							"variable": [
+								{
+									"key": "userId",
+									"value": "1acc3a45-dfb8-53e8-9005-e651b4112692"
+								},
+								{
+									"key": "message",
+									"value": "abc"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "post a message - without headers and valid params",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Verify post /messages/:userId/:message without headers and valid params\", function(){\r",
+									"    pm.response.to.have.status(403);\r",
+									"})"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "x-authentication-token",
+								"value": "very-secrete-token",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"url": {
+							"raw": "https://pacific-taiga-76065.herokuapp.com/messages/:userId/:message",
+							"protocol": "https",
+							"host": [
+								"pacific-taiga-76065",
+								"herokuapp",
+								"com"
+							],
+							"path": [
+								"messages",
+								":userId",
+								":message"
+							],
+							"variable": [
+								{
+									"key": "userId",
+									"value": "1acc3a45-dfb8-53e8-9005-e651b4112692"
+								},
+								{
+									"key": "message",
+									"value": "abc"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "DELETE /clear",
+			"item": [
+				{
+					"name": "delete all messages - valid headers",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Verify get /users with valid headers\", function(){\r",
+									"    pm.response.to.have.status(200);\r",
+									"})"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "x-authentication-token",
+								"value": "very-secrete-token",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "https://pacific-taiga-76065.herokuapp.com/clear",
+							"protocol": "https",
+							"host": [
+								"pacific-taiga-76065",
+								"herokuapp",
+								"com"
+							],
+							"path": [
+								"clear"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete all messages - wrong headers",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Verify delete /users with wrong headers\", function(){\r",
+									"    pm.response.to.have.status(403);\r",
+									"})"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "x-authentication-token",
+								"value": "token-very-secrete",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "https://pacific-taiga-76065.herokuapp.com/clear",
+							"protocol": "https",
+							"host": [
+								"pacific-taiga-76065",
+								"herokuapp",
+								"com"
+							],
+							"path": [
+								"clear"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete all messages - without headers",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Verify delete /users without headers\", function(){\r",
+									"    pm.response.to.have.status(403);\r",
+									"})"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "x-authentication-token",
+								"value": "very-secrete-token",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"url": {
+							"raw": "https://pacific-taiga-76065.herokuapp.com/clear",
+							"protocol": "https",
+							"host": [
+								"pacific-taiga-76065",
+								"herokuapp",
+								"com"
+							],
+							"path": [
+								"clear"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete all messages - null headers",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Verify delete /users with null headers\", function(){\r",
+									"    pm.response.to.have.status(403);\r",
+									"})"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "x-authentication-token",
+								"value": "",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "https://pacific-taiga-76065.herokuapp.com/clear",
+							"protocol": "https",
+							"host": [
+								"pacific-taiga-76065",
+								"herokuapp",
+								"com"
+							],
+							"path": [
+								"clear"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
